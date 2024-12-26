@@ -72,6 +72,7 @@ namespace StreetFighterGame.GameEngine
         }
         public void DrawImage(Graphics g)
         {
+            if (Images == null) return;
             if (Images.Count > 0)
             {
                 // Vẽ frame hiện tại
