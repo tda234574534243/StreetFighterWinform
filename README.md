@@ -73,6 +73,8 @@ Game cung cấp các chức năng sau:
 4. **Lịch sử đấu**: Lưu trữ kết quả các trận đấu.
 5. **Bảng xếp hạng**: Cập nhật thứ hạng dựa trên số trận thắng.
 
+---
+
 ## Cơ Sở Dữ Liệu
 
 ### 4.1 Các bảng chính
@@ -87,15 +89,43 @@ Game cung cấp các chức năng sau:
 
 ### 4.2 Diagram
 ![CSDL](https://github.com/tda234574534243/StreetFighterWinform/raw/f8e2063b590d5a26a000e6be15ce126fea53ba64/StreetFighterGame/Resources/140dde4ff6854bdb1294.jpg)
-## Kết Luận
 
-### 5.1 Mục tiêu đạt được
+---
+## 5. Demo
+### Login form
+![LoginForm](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/loginsf.jpg)
+### Admin Account
+![Account](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/Admin.JPG)
+### Normal Account
+![Account1](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/normaluser.JPG)
+### Gameplay
+![Game](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/gameplay.JPG)
+### Select Char
+![Select](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/select.JPG)
+### Select Map
+![Map](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/map.JPG)
+### Find and Delete Account by Admin
+![https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/adminaccount.JPG]
+
+---
+## 6. Kết Luận
+
+### 6.1 Mục tiêu đạt được
 - Hoàn thiện cơ chế chiến đấu đối kháng.
 - Cung cấp trải nghiệm chơi đơn và PvP mượt mà.
 - Xây dựng giao diện người dùng thân thiện.
 
-### 5.2 Hướng phát triển
+### 6.2 Hướng phát triển
 - Tích hợp chơi online và giải đấu.
 - Tạo thêm nhân vật và chế độ chơi mới.
 - Phát triển AI thông minh hơn.
 - Thêm tính năng tùy biến nhân vật và các yếu tố thẩm mỹ.
+# Note: 
+- You can download, modify, and use the code for your project.
+- This project is licensed under the MIT License, which grants permission to:
+- Use the code for personal, educational, or commercial purposes.
+- Modify the code as needed for your specific requirements.
+- Distribute the modified or original code, provided that the license and copyright notice are included.
+# Disclaimer:
+- The project is provided "as is" without any warranty, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
+# Source character and image: we will update soon
