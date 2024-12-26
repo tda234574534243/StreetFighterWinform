@@ -134,3 +134,4 @@ Game cung cấp các chức năng sau:
 - Binh05 [https://github.com/Binh05]
 - PhanTanHuy [https://github.com/PhanTanHuy]
 - LamQuocViet [https://github.com/Lamquocviet]
+- HoDangKhoa [Update soon]
