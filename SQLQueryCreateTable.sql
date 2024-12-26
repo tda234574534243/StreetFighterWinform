@@ -1,0 +1,44 @@
+create database DoAnGameLo
+
+go
+
+use DoAnGameLo
+
+go
+CREATE TABLE TAI_KHOAN (
+    UserId INT IDENTITY(1,1) PRIMARY KEY,
+    Username VARCHAR(30) NOT NULL UNIQUE,
+    Password VARCHAR(50) NOT NULL,
+    Tien INT DEFAULT 0,
+    SoTranThang INT DEFAULT 0,
+    SoTranThua INT DEFAULT 0,
+	SoTranHoa INT DEFAULT 0
+);
+
+go
+CREATE TABLE NHAN_VAT (
+    NhanVatId INT IDENTITY(1,1) PRIMARY KEY,
+    TenNhanVat VARCHAR(30) NOT NULL UNIQUE
+);
+
+go
+CREATE TABLE LICH_SU_TRAN_DAU (
+    TranDauId INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL,
+    NhanVat1Id INT NOT NULL,
+    NhanVat2Id INT NOT NULL,
+    KetQua VARCHAR(10) NOT NULL CHECK (KetQua IN ('Win', 'Lose','Draw')),
+    ThoiGianTranDau DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (UserId) REFERENCES TAI_KHOAN(UserId),
+    FOREIGN KEY (NhanVat1Id) REFERENCES NHAN_VAT(NhanVatId),
+    FOREIGN KEY (NhanVat2Id) REFERENCES NHAN_VAT(NhanVatId)
+);
+
+go
+CREATE TABLE XEP_HANG (
+    UserId INT PRIMARY KEY,
+    SoTranThang INT NOT NULL,
+    XepHang INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES TAI_KHOAN(UserId)
+);
+

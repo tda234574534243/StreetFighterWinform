@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DoAnGameLoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LICH_SU_TRAN_DAU">
+          <Key>
+            <PropertyRef Name="TranDauId" />
+          </Key>
+          <Property Name="TranDauId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="NhanVat1Id" Type="int" Nullable="false" />
+          <Property Name="NhanVat2Id" Type="int" Nullable="false" />
+          <Property Name="KetQua" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ThoiGianTranDau" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NHAN_VAT">
+          <Key>
+            <PropertyRef Name="NhanVatId" />
+          </Key>
+          <Property Name="NhanVatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenNhanVat" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAI_KHOAN">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tien" Type="int" />
+          <Property Name="SoTranThang" Type="int" />
+          <Property Name="SoTranThua" Type="int" />
+          <Property Name="SoTranHoa" Type="int" />
+        </EntityType>
+        <EntityType Name="XEP_HANG">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SoTranThang" Type="int" Nullable="false" />
+          <Property Name="XepHang" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__LICH_SU_T__NhanV__5535A963">
+          <End Role="NHAN_VAT" Type="Self.NHAN_VAT" Multiplicity="1" />
+          <End Role="LICH_SU_TRAN_DAU" Type="Self.LICH_SU_TRAN_DAU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VAT">
+              <PropertyRef Name="NhanVatId" />
+            </Principal>
+            <Dependent Role="LICH_SU_TRAN_DAU">
+              <PropertyRef Name="NhanVat1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICH_SU_T__NhanV__5629CD9C">
+          <End Role="NHAN_VAT" Type="Self.NHAN_VAT" Multiplicity="1" />
+          <End Role="LICH_SU_TRAN_DAU" Type="Self.LICH_SU_TRAN_DAU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VAT">
+              <PropertyRef Name="NhanVatId" />
+            </Principal>
+            <Dependent Role="LICH_SU_TRAN_DAU">
+              <PropertyRef Name="NhanVat2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICH_SU_T__UserI__5441852A">
+          <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+          <End Role="LICH_SU_TRAN_DAU" Type="Self.LICH_SU_TRAN_DAU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAI_KHOAN">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="LICH_SU_TRAN_DAU">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__XEP_HANG__UserId__59063A47">
+          <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+          <End Role="XEP_HANG" Type="Self.XEP_HANG" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TAI_KHOAN">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="XEP_HANG">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DoAnGameLoModelStoreContainer">
+          <EntitySet Name="LICH_SU_TRAN_DAU" EntityType="Self.LICH_SU_TRAN_DAU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHAN_VAT" EntityType="Self.NHAN_VAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAI_KHOAN" EntityType="Self.TAI_KHOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XEP_HANG" EntityType="Self.XEP_HANG" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__LICH_SU_T__NhanV__5535A963" Association="Self.FK__LICH_SU_T__NhanV__5535A963">
+            <End Role="NHAN_VAT" EntitySet="NHAN_VAT" />
+            <End Role="LICH_SU_TRAN_DAU" EntitySet="LICH_SU_TRAN_DAU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_T__NhanV__5629CD9C" Association="Self.FK__LICH_SU_T__NhanV__5629CD9C">
+            <End Role="NHAN_VAT" EntitySet="NHAN_VAT" />
+            <End Role="LICH_SU_TRAN_DAU" EntitySet="LICH_SU_TRAN_DAU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_T__UserI__5441852A" Association="Self.FK__LICH_SU_T__UserI__5441852A">
+            <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+            <End Role="LICH_SU_TRAN_DAU" EntitySet="LICH_SU_TRAN_DAU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__XEP_HANG__UserId__59063A47" Association="Self.FK__XEP_HANG__UserId__59063A47">
+            <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+            <End Role="XEP_HANG" EntitySet="XEP_HANG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DoAnGameLoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DoAnGameLoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LICH_SU_TRAN_DAU" EntityType="DoAnGameLoModel.LICH_SU_TRAN_DAU" />
+          <EntitySet Name="NHAN_VAT" EntityType="DoAnGameLoModel.NHAN_VAT" />
+          <EntitySet Name="TAI_KHOAN" EntityType="DoAnGameLoModel.TAI_KHOAN" />
+          <EntitySet Name="XEP_HANG" EntityType="DoAnGameLoModel.XEP_HANG" />
+          <AssociationSet Name="FK__LICH_SU_T__NhanV__68487DD7" Association="DoAnGameLoModel.FK__LICH_SU_T__NhanV__68487DD7">
+            <End Role="NHAN_VAT" EntitySet="NHAN_VAT" />
+            <End Role="LICH_SU_TRAN_DAU" EntitySet="LICH_SU_TRAN_DAU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_T__NhanV__693CA210" Association="DoAnGameLoModel.FK__LICH_SU_T__NhanV__693CA210">
+            <End Role="NHAN_VAT" EntitySet="NHAN_VAT" />
+            <End Role="LICH_SU_TRAN_DAU" EntitySet="LICH_SU_TRAN_DAU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_T__UserI__6754599E" Association="DoAnGameLoModel.FK__LICH_SU_T__UserI__6754599E">
+            <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+            <End Role="LICH_SU_TRAN_DAU" EntitySet="LICH_SU_TRAN_DAU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__XEP_HANG__UserId__6C190EBB" Association="DoAnGameLoModel.FK__XEP_HANG__UserId__6C190EBB">
+            <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+            <End Role="XEP_HANG" EntitySet="XEP_HANG" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LICH_SU_TRAN_DAU">
+          <Key>
+            <PropertyRef Name="TranDauId" />
+          </Key>
+          <Property Name="TranDauId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="NhanVat1Id" Type="Int32" Nullable="false" />
+          <Property Name="NhanVat2Id" Type="Int32" Nullable="false" />
+          <Property Name="KetQua" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ThoiGianTranDau" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NHAN_VAT" Relationship="DoAnGameLoModel.FK__LICH_SU_T__NhanV__68487DD7" FromRole="LICH_SU_TRAN_DAU" ToRole="NHAN_VAT" />
+          <NavigationProperty Name="NHAN_VAT1" Relationship="DoAnGameLoModel.FK__LICH_SU_T__NhanV__693CA210" FromRole="LICH_SU_TRAN_DAU" ToRole="NHAN_VAT" />
+          <NavigationProperty Name="TAI_KHOAN" Relationship="DoAnGameLoModel.FK__LICH_SU_T__UserI__6754599E" FromRole="LICH_SU_TRAN_DAU" ToRole="TAI_KHOAN" />
+        </EntityType>
+        <EntityType Name="NHAN_VAT">
+          <Key>
+            <PropertyRef Name="NhanVatId" />
+          </Key>
+          <Property Name="NhanVatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNhanVat" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LICH_SU_TRAN_DAU" Relationship="DoAnGameLoModel.FK__LICH_SU_T__NhanV__68487DD7" FromRole="NHAN_VAT" ToRole="LICH_SU_TRAN_DAU" />
+          <NavigationProperty Name="LICH_SU_TRAN_DAU1" Relationship="DoAnGameLoModel.FK__LICH_SU_T__NhanV__693CA210" FromRole="NHAN_VAT" ToRole="LICH_SU_TRAN_DAU" />
+        </EntityType>
+        <EntityType Name="TAI_KHOAN">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tien" Type="Int32" />
+          <Property Name="SoTranThang" Type="Int32" />
+          <Property Name="SoTranThua" Type="Int32" />
+          <NavigationProperty Name="LICH_SU_TRAN_DAU" Relationship="DoAnGameLoModel.FK__LICH_SU_T__UserI__6754599E" FromRole="TAI_KHOAN" ToRole="LICH_SU_TRAN_DAU" />
+          <NavigationProperty Name="XEP_HANG" Relationship="DoAnGameLoModel.FK__XEP_HANG__UserId__6C190EBB" FromRole="TAI_KHOAN" ToRole="XEP_HANG" />
+          <Property Name="SoTranHoa" Type="Int32" />
+        </EntityType>
+        <EntityType Name="XEP_HANG">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SoTranThang" Type="Int32" Nullable="false" />
+          <Property Name="XepHang" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TAI_KHOAN" Relationship="DoAnGameLoModel.FK__XEP_HANG__UserId__6C190EBB" FromRole="XEP_HANG" ToRole="TAI_KHOAN" />
+        </EntityType>
+        <Association Name="FK__LICH_SU_T__NhanV__68487DD7">
+          <End Type="DoAnGameLoModel.NHAN_VAT" Role="NHAN_VAT" Multiplicity="1" />
+          <End Type="DoAnGameLoModel.LICH_SU_TRAN_DAU" Role="LICH_SU_TRAN_DAU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VAT">
+              <PropertyRef Name="NhanVatId" />
+            </Principal>
+            <Dependent Role="LICH_SU_TRAN_DAU">
+              <PropertyRef Name="NhanVat1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICH_SU_T__NhanV__693CA210">
+          <End Type="DoAnGameLoModel.NHAN_VAT" Role="NHAN_VAT" Multiplicity="1" />
+          <End Type="DoAnGameLoModel.LICH_SU_TRAN_DAU" Role="LICH_SU_TRAN_DAU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VAT">
+              <PropertyRef Name="NhanVatId" />
+            </Principal>
+            <Dependent Role="LICH_SU_TRAN_DAU">
+              <PropertyRef Name="NhanVat2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICH_SU_T__UserI__6754599E">
+          <End Type="DoAnGameLoModel.TAI_KHOAN" Role="TAI_KHOAN" Multiplicity="1" />
+          <End Type="DoAnGameLoModel.LICH_SU_TRAN_DAU" Role="LICH_SU_TRAN_DAU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAI_KHOAN">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="LICH_SU_TRAN_DAU">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__XEP_HANG__UserId__6C190EBB">
+          <End Type="DoAnGameLoModel.TAI_KHOAN" Role="TAI_KHOAN" Multiplicity="1" />
+          <End Type="DoAnGameLoModel.XEP_HANG" Role="XEP_HANG" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TAI_KHOAN">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="XEP_HANG">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DoAnGameLoModelStoreContainer" CdmEntityContainer="DoAnGameLoEntities">
+          <EntitySetMapping Name="LICH_SU_TRAN_DAU">
+            <EntityTypeMapping TypeName="DoAnGameLoModel.LICH_SU_TRAN_DAU">
+              <MappingFragment StoreEntitySet="LICH_SU_TRAN_DAU">
+                <ScalarProperty Name="ThoiGianTranDau" ColumnName="ThoiGianTranDau" />
+                <ScalarProperty Name="KetQua" ColumnName="KetQua" />
+                <ScalarProperty Name="NhanVat2Id" ColumnName="NhanVat2Id" />
+                <ScalarProperty Name="NhanVat1Id" ColumnName="NhanVat1Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TranDauId" ColumnName="TranDauId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHAN_VAT">
+            <EntityTypeMapping TypeName="DoAnGameLoModel.NHAN_VAT">
+              <MappingFragment StoreEntitySet="NHAN_VAT">
+                <ScalarProperty Name="TenNhanVat" ColumnName="TenNhanVat" />
+                <ScalarProperty Name="NhanVatId" ColumnName="NhanVatId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAI_KHOAN">
+            <EntityTypeMapping TypeName="DoAnGameLoModel.TAI_KHOAN">
+              <MappingFragment StoreEntitySet="TAI_KHOAN">
+                <ScalarProperty Name="SoTranHoa" ColumnName="SoTranHoa" />
+                <ScalarProperty Name="SoTranThua" ColumnName="SoTranThua" />
+                <ScalarProperty Name="SoTranThang" ColumnName="SoTranThang" />
+                <ScalarProperty Name="Tien" ColumnName="Tien" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XEP_HANG">
+            <EntityTypeMapping TypeName="DoAnGameLoModel.XEP_HANG">
+              <MappingFragment StoreEntitySet="XEP_HANG">
+                <ScalarProperty Name="XepHang" ColumnName="XepHang" />
+                <ScalarProperty Name="SoTranThang" ColumnName="SoTranThang" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40cbf5bc59664a0e81f0b7415f862be4" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAnGameLoModel.LICH_SU_TRAN_DAU" Width="1.5" PointX="2.875" PointY="2.75" />
+        <EntityTypeShape EntityType="DoAnGameLoModel.NHAN_VAT" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="DoAnGameLoModel.TAI_KHOAN" Width="1.5" PointX="5.25" PointY="3" />
+        <EntityTypeShape EntityType="DoAnGameLoModel.XEP_HANG" Width="1.5" PointX="7.125" PointY="0.75" />
+        <AssociationConnector Association="DoAnGameLoModel.FK__LICH_SU_T__NhanV__68487DD7" />
+        <AssociationConnector Association="DoAnGameLoModel.FK__LICH_SU_T__NhanV__693CA210" />
+        <AssociationConnector Association="DoAnGameLoModel.FK__LICH_SU_T__UserI__6754599E" />
+        <AssociationConnector Association="DoAnGameLoModel.FK__XEP_HANG__UserId__6C190EBB" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
