@@ -4,14 +4,14 @@
 ---
 
 ### 1.1 Giới thiệu về lĩnh vực
-M.U.G.E.N là một game engine mạnh mẽ, đặc biệt phù hợp để phát triển các trò chơi đối kháng. Người dùng có thể tạo ra những tựa game với nhân vật tùy chỉnh, sân đấu độc đáo và cơ chế chiến đấu đa dạng. M.U.G.E.N là lựa chọn lý tưởng để học hỏi cách phát triển game đối kháng, đồng thời sáng tạo các nội dung mới.
+M.U.G.E.N là một game engine mạnh mẽ, đặc biệt phù hợp để phát triển các trò chơi đối kháng. Người dùng có thể tạo ra những tựa game với nhân vật tùy chỉnh, sân đấu độc đáo và cơ chế chiến đấu đa dạng,là lựa chọn lý tưởng để học hỏi cách phát triển game đối kháng, đồng thời sáng tạo các nội dung mới.
 
 Street Fighter, tựa game đối kháng huyền thoại của Capcom, nổi bật với các nhân vật có phong cách chiến đấu độc đáo và lối chơi sâu sắc. Kết hợp M.U.G.E.N với Street Fighter là một cách tuyệt vời để tái hiện và học hỏi cách phát triển một tựa game đối kháng thành công.
 
 ---
 
 ### 1.2 Lý do chọn đề tài
-Đề tài tận dụng khả năng tùy biến của M.U.G.E.N và các yếu tố thành công của Street Fighter để tạo ra một trò chơi độc đáo, hấp dẫn. Dự án mang lại cơ hội thực hành lập trình, thiết kế nhân vật, tối ưu hóa gameplay và học hỏi từ cộng đồng phát triển toàn cầu.
+Đề tài tận dụng khả năng tùy biến của M.U.G.E.N và các yếu tố thành công của Street Fighter để tạo ra một trò chơi được làm bằng Winform C# độc đáo, hấp dẫn. Dự án mang lại cơ hội thực hành lập trình, thiết kế nhân vật, tối ưu hóa gameplay và học hỏi từ cộng đồng phát triển toàn cầu.
 ---
 
 ### 1.3 Giới thiệu sơ lược về game
