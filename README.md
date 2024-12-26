@@ -40,7 +40,6 @@ Game cung cấp các chức năng sau:
    - Nhập các file script SQL trong thư mục `Database` để tạo bảng và dữ liệu mẫu.
 3. **Cài đặt dependencies**:
    - Mở dự án bằng Visual Studio.
-   - Khởi chạy lệnh khôi phục các package NuGet.
 4. **Cấu hình kết nối**:
    - Sửa file thay đổi severname trong `App.config` để cập nhật thông tin kết nối đến cơ sở dữ liệu.
      ![appconfig](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/appconfig.JPG)
