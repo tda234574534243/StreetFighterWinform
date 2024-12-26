@@ -31,7 +31,7 @@ Game cung cấp các chức năng sau:
 - SQL Server 2019 hoặc phiên bản mới hơn.
 
 ### 2.2 Cài đặt
-1. **Tải mã nguồn**: Clone dự án từ repository GitHub.
+1. **Tải mã nguồn**: Clone dự án từ repository GitHub (or download .zip).
    ```bash
    git clone <repository_url>
    ```
