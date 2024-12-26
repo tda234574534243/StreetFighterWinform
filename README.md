@@ -105,7 +105,7 @@ Game cung cấp các chức năng sau:
 ### Select Map
 ![Map](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/map.JPG)
 ### Find and Delete Account by Admin
-![https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/adminaccount.JPG]
+![Check](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/adminaccount.JPG)
 
 ---
 ## 6. Kết Luận
