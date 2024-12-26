@@ -42,7 +42,7 @@ Game cung cấp các chức năng sau:
    - Mở dự án bằng Visual Studio.
    - Khởi chạy lệnh khôi phục các package NuGet.
 4. **Cấu hình kết nối**:
-   - Sửa file `appsettings.json` để cập nhật thông tin kết nối đến cơ sở dữ liệu.
+   - Sửa file thay đổi severname trong `appconfig` để cập nhật thông tin kết nối đến cơ sở dữ liệu.
 5. **Chạy ứng dụng**:
    - Nhấn `F5` trong Visual Studio để khởi chạy ứng dụng.
 ---
