@@ -129,3 +129,7 @@ Game cung cấp các chức năng sau:
 # Disclaimer:
 - The project is provided "as is" without any warranty, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
 # Source character and image: we will update soon
+# Teammate
+- Manwithgame [https://github.com/tda234574534243]
+- Binh05 [https://github.com/Binh05]
+- PhanTanHuy [https://github.com/PhanTanHuy]
