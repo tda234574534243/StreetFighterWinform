@@ -29,6 +29,7 @@ Game cung cấp các chức năng sau:
 - Hệ điều hành: Windows 7 trở lên.
 - .NET Framework 4.8 trở lên.
 - SQL Server 2019 hoặc phiên bản mới hơn.
+- Visual Studio 2022 
 
 ### 2.2 Cài đặt
 1. **Tải mã nguồn**: Clone dự án từ repository GitHub (or download .zip).
@@ -39,7 +40,7 @@ Game cung cấp các chức năng sau:
    - Tạo cơ sở dữ liệu trên SQL Server.
    - Nhập các file script SQL trong thư mục `Database` để tạo bảng và dữ liệu mẫu.
 3. **Cài đặt dependencies**:
-   - Mở dự án bằng Visual Studio.
+   - Mở dự án bằng Visual Studio 2022.
 4. **Cấu hình kết nối**:
    - Sửa file thay đổi severname trong `App.config` để cập nhật thông tin kết nối đến cơ sở dữ liệu.
      ![appconfig](https://github.com/tda234574534243/StreetFighterWinform/blob/master/StreetFighterGame/Resources/appconfig.JPG)
