@@ -82,7 +82,7 @@ namespace StreetFighterGame.Characters
                 TruMana(4);
 
                 // Di chuyển hitbox theo hướng xa
-                HitboxPositionXLeft += (int)hitboxVelocityX;
+                HitboxPositionXLeft -= (int)hitboxVelocityX;
                 HitboxPositionXRight += (int)hitboxVelocityX;
 
                 HitboxPositionYRight = HitboxPositionYLeft = PositionY + (charHeight / 2 - frames[currentHitboxFrame].Height / 2);
