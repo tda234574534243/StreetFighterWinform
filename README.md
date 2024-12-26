@@ -86,7 +86,7 @@ Game cung cấp các chức năng sau:
   - Thuộc tính: UserId, SoTranThang, XepHang.
 
 ### 4.2 Diagram
-![CSDL](.\Resources\140dde4ff6854bdb1294.jpg)
+![CSDL]([.\Resources\140dde4ff6854bdb1294.jpg](https://github.com/tda234574534243/StreetFighterWinform/blob/f8e2063b590d5a26a000e6be15ce126fea53ba64/StreetFighterGame/Resources/140dde4ff6854bdb1294.jpg)
 ## Kết Luận
 
 ### 5.1 Mục tiêu đạt được
