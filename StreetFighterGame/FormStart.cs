@@ -85,5 +85,10 @@ namespace StreetFighterGame
             hd.Show();
             this.Close();
         }
+
+        private void FormStart_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

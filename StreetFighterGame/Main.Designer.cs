@@ -55,9 +55,10 @@
             this.labelWiner.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelWiner.Font = new System.Drawing.Font("Wide Latin", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWiner.ForeColor = System.Drawing.Color.Orange;
-            this.labelWiner.Location = new System.Drawing.Point(427, 245);
+            this.labelWiner.Location = new System.Drawing.Point(320, 199);
+            this.labelWiner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelWiner.Name = "labelWiner";
-            this.labelWiner.Size = new System.Drawing.Size(473, 98);
+            this.labelWiner.Size = new System.Drawing.Size(355, 80);
             this.labelWiner.TabIndex = 0;
             this.labelWiner.Text = "Goku WIN";
             this.labelWiner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,9 +70,10 @@
             this.LbCountdown.BackColor = System.Drawing.Color.Transparent;
             this.LbCountdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbCountdown.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LbCountdown.Location = new System.Drawing.Point(632, 46);
+            this.LbCountdown.Location = new System.Drawing.Point(474, 37);
+            this.LbCountdown.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbCountdown.Name = "LbCountdown";
-            this.LbCountdown.Size = new System.Drawing.Size(75, 54);
+            this.LbCountdown.Size = new System.Drawing.Size(61, 44);
             this.LbCountdown.TabIndex = 1;
             this.LbCountdown.Text = "60";
             // 
@@ -81,22 +83,21 @@
             this.Lbstart.BackColor = System.Drawing.Color.Transparent;
             this.Lbstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbstart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Lbstart.Location = new System.Drawing.Point(623, 245);
+            this.Lbstart.Location = new System.Drawing.Point(467, 199);
+            this.Lbstart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbstart.Name = "Lbstart";
-            this.Lbstart.Size = new System.Drawing.Size(83, 91);
+            this.Lbstart.Size = new System.Drawing.Size(68, 73);
             this.Lbstart.TabIndex = 2;
             this.Lbstart.Text = "3";
-            this.Lbstart.Click += new System.EventHandler(this.Lbstart_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 20);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(72, 55);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -105,10 +106,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(1152, 20);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(864, 16);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(96, 68);
+            this.pictureBox3.Size = new System.Drawing.Size(72, 55);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
@@ -117,10 +117,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(99, 7);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(74, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(307, 59);
+            this.pictureBox2.Size = new System.Drawing.Size(230, 48);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -129,18 +128,17 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(885, 7);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(664, 6);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(328, 59);
+            this.pictureBox4.Size = new System.Drawing.Size(246, 48);
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
             // StreetFighterGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 583);
+            this.ClientSize = new System.Drawing.Size(970, 474);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.LbCountdown);
             this.Controls.Add(this.labelWiner);
@@ -149,7 +147,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "StreetFighterGame";
             this.Text = "Street Fighter 2.0";

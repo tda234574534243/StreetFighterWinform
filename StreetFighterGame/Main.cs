@@ -39,7 +39,7 @@ namespace StreetFighterGame
         }
         private void InitializeCountdown()
         {
-            
+
             CountdownTimer = new Timer { Interval = 1000 };
             CountdownTimer.Tick += (sender, e) =>
             {
@@ -51,13 +51,14 @@ namespace StreetFighterGame
                     labelWiner.Visible = true;
                 }
                 if (countdownValue == 0)
-                {   
-                   CountdownTimer.Stop();
-                   QuanLiTaiKhoan.LuuTranDau(
-                        idChar1,
-                        idChar2,
-                        "Draw"
-                   );
+                {
+                    CountdownTimer.Stop();
+                    EndGame();
+                    QuanLiTaiKhoan.LuuTranDau(
+                         idChar1,
+                         idChar2,
+                         "Draw"
+                    );
                 }
                 labelWiner.ToString();
             };
@@ -94,7 +95,7 @@ namespace StreetFighterGame
                 else
                 {
                     Lbstart.Text = StartTimer.ToString();
-                    
+
                 }
             };
         }
@@ -129,9 +130,18 @@ namespace StreetFighterGame
             // Kiểm tra đường dẫn bản đồ và tải hình ảnh
             if (!string.IsNullOrEmpty(mappath) && File.Exists(mappath))
             {
-                background = Image.FromFile(mappath); // Gán hình ảnh vào biến background
-                this.BackgroundImage = background;   // Gán ảnh nền cho Form
-                this.BackgroundImageLayout = ImageLayout.Stretch; // Thiết lập chế độ căn chỉnh ảnh
+                // Đọc hình ảnh từ file
+                background = Image.FromFile(mappath);
+
+                // Tính toán tỷ lệ để thay đổi kích thước ảnh sao cho nó phù hợp với kích thước của form
+                int newWidth = this.Width;  // Chiều rộng của form
+                int newHeight = this.Height;  // Chiều cao của form
+
+                // Thay đổi kích thước ảnh sao cho nó phù hợp với form mà không làm méo hình ảnh
+                Image resizedBackground = new Bitmap(background, newWidth, newHeight);
+
+                // Gán ảnh nền đã thay đổi kích thước vào form
+                this.BackgroundImage = resizedBackground;
             }
 
 
@@ -148,7 +158,7 @@ namespace StreetFighterGame
             // Initialize Timer for game animation
             animationTimer = new Timer
             {
-                Interval = 10
+                Interval = 16
             };
             animationTimer.Tick += new EventHandler(OnAnimationTick);
             animationTimer.Start();
@@ -177,7 +187,7 @@ namespace StreetFighterGame
 
         private void StreetFighterGame_Load_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -191,9 +201,9 @@ namespace StreetFighterGame
         }
         private void EndGame()
         {
-           FormStart st = new FormStart();
-           st.Show();
-           this.Close();
+            FormStart st = new FormStart();
+            st.Show();
+            this.Close();
         }
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
@@ -211,7 +221,7 @@ namespace StreetFighterGame
             if (e.KeyCode == Keys.K) player1AttackK = true;
             if (e.KeyCode == Keys.L) player1Dash = true;
             if (e.KeyCode == Keys.I) player1AttackI = true;
-            
+
 
             // Handle key down events for Player 2
             if (e.KeyCode == Keys.Left) player2MoveLeft = true;
@@ -314,7 +324,7 @@ namespace StreetFighterGame
                     logicGame.Player2.IsFacingLeft = false;
                 }
 
-                if (!player2MoveLeft && !player2MoveRight && ! logicGame.Player1.isDashing)
+                if (!player2MoveLeft && !player2MoveRight && !logicGame.Player1.isDashing)
                 {
                     if (!logicGame.Player2.IsFacingLeft && logicGame.Player2.PositionX > logicGame.Player1.PositionX)
                     {
@@ -398,7 +408,7 @@ namespace StreetFighterGame
 
             // Lưu trạng thái đồ họa hiện tại
             GraphicsState state = e.Graphics.Save();
-             
+
             // Nếu cần flip, thực hiện flip
             if (shouldFlip)
             {
@@ -422,12 +432,12 @@ namespace StreetFighterGame
         {
             Rectangle rectangleHitbox;
             GraphicsState state = e.Graphics.Save();
-            
+
             if (character.IsFacingLeft)
             {
                 if (character.CurrentHitboxImage == null)
                 {
-                    rectangleHitbox = new Rectangle(character.PositionX - character.charWidth, character.PositionY + (character.charHeight / 2 - (character.charHeight / 2)), character.charWidth, character.charHeight/2);
+                    rectangleHitbox = new Rectangle(character.PositionX - character.charWidth, character.PositionY + (character.charHeight / 2 - (character.charHeight / 2)), character.charWidth, character.charHeight / 2);
                 }
                 else
                 {
@@ -438,9 +448,9 @@ namespace StreetFighterGame
                     }*/
                     e.Graphics.TranslateTransform(character.PositionX, 0);
                     e.Graphics.ScaleTransform(-1, 1);
-                    
+
                     e.Graphics.DrawImage(character.CurrentHitboxImage, new Rectangle(character.HitboxPositionXRight - character.PositionX, character.HitboxPositionYLeft, (int)(character.CurrentHitboxImage.Width), (int)(character.CurrentHitboxImage.Height)));
-                   
+
                     e.Graphics.TranslateTransform(character.PositionX, 0);
                     e.Graphics.ScaleTransform(-1, 1);
                 }
@@ -455,17 +465,17 @@ namespace StreetFighterGame
                 {
                     rectangleHitbox = new Rectangle(character.HitboxPositionXRight, character.HitboxPositionYRight, (int)(character.CurrentHitboxImage.Width), (int)(character.CurrentHitboxImage.Height));
                     e.Graphics.DrawImage(character.CurrentHitboxImage, new Rectangle(character.HitboxPositionXRight, character.HitboxPositionYRight, (int)(character.CurrentHitboxImage.Width), (int)(character.CurrentHitboxImage.Height)));
-              
+
                 }
             }
 
-            if(CollisionHandler.KiemTra2ThangDanhNhau(character, character2, rectangleHitbox, character2.rectangle, animationManager, this))
+            if (CollisionHandler.KiemTra2ThangDanhNhau(character, character2, rectangleHitbox, character2.rectangle, animationManager, this))
             {
                 animationManager.DrawImage(e.Graphics);
             }
 
             e.Graphics.Restore(state);
-            
+
         }
 
 
@@ -508,9 +518,9 @@ namespace StreetFighterGame
                 };
                 DrawCharacter(e, logicGame.Player2, flip: true);  // Vẽ nhân vật Player2
             }
-            
+
             if (logicGame.Player1.DangDanhDungKo()) DrawHitbox(e, attackType: ActionState.AttackingI, logicGame.Player1, flip: false, logicGame.Player2);
-            if (logicGame.Player2.DangDanhDungKo())  DrawHitbox(e, attackType: ActionState.AttackingI, logicGame.Player2, flip: false, logicGame.Player1);
+            if (logicGame.Player2.DangDanhDungKo()) DrawHitbox(e, attackType: ActionState.AttackingI, logicGame.Player2, flip: false, logicGame.Player1);
 
             Font newFont = new Font("Arial", 24, FontStyle.Bold);
 
@@ -586,7 +596,7 @@ namespace StreetFighterGame
             // Tạo Timer mới
             timer = new Timer
             {
-                Interval = 1000
+                Interval = 4000
             };
             timer.Tick += Timer_Tick;
             timer.Start();
@@ -594,22 +604,12 @@ namespace StreetFighterGame
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (endGame)
-            {
-                timer.Stop();
-                timer.Dispose();
-                timer = null;
-
-                FormStart mhs = new FormStart();
-                mhs.Show();
-                this.Close();
-            }
-            else
-            {
-                timer.Stop();
-                timer.Dispose();
-                timer = null;
-            }
+            timer.Stop();
+            timer.Dispose();
+            timer = null;
+            FormStart mhs = new FormStart();
+            mhs.Show();
+            this.Dispose(); // Giải phóng form hiện tại
         }
 
 

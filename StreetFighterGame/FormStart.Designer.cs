@@ -211,6 +211,7 @@
             this.MaximizeBox = false;
             this.Name = "FormStart";
             this.Text = "FormStart";
+            this.Load += new System.EventHandler(this.FormStart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

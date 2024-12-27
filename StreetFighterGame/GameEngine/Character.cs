@@ -1,5 +1,4 @@
-﻿using NAudio.Wave;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
@@ -67,7 +66,7 @@ namespace StreetFighterGame.GameEngine
         public Rectangle rectangleEneme { get; set; }
         public int manaSkillI { get; protected set; }
         public int PositionXName { get; set; }
-        public bool isDashing {  get; private set; }
+        public bool isDashing { get; private set; }
         //public Rectangle rectangleHitbox {  get; set; }
 
         protected Dictionary<ActionState, List<Image>> Animations { get; set; }
@@ -77,19 +76,19 @@ namespace StreetFighterGame.GameEngine
         protected int currentFrame = 0;
         public int currentHitboxFrame = 0;
         private int frameDelay = 0;
-      //  private int frameCounter = 0;
+        //  private int frameCounter = 0;
         protected int lastFrameOfAttackAnimation;
         public int lastFrameOfHitboxAnimation;
         private float jumpSpeed = 0f;
         private const float Gravity = 16f;
-       // private int DefendYOffset = 25;
+        // private int DefendYOffset = 25;
         public bool isDefense, triggerAttack; // biến để kiểm tra có đang trong trạng thái attack hay ko
         public bool isAttacking, isJumpping, isHit;
 
         ChiSoSucManh cssm;
 
         protected Timer frameTimer; // Timer để thay đổi frame
-        protected int frameInterval = 100; // Khoảng thời gian giữa các frame (ms)
+        protected int frameInterval = 6; // Khoảng thời gian giữa các frame (ms)
 
         protected Timer HitboxFrameTimer;
 
@@ -97,15 +96,15 @@ namespace StreetFighterGame.GameEngine
         private int hitDuration = 300;
 
         private Timer dashTimer;
-        private int dashSpeed = 60;
+        private int dashSpeed = 100;
         private int dashDirection = 1;
         private int dashDistance = 300;
 
         //private List<Hitbox> hitboxes = new List<Hitbox>();
 
 
-        
-        protected Character(int startX, int startY, float scaleFactor, int mau, int d, int hitboxDurian = 100)
+
+        protected Character(int startX, int startY, float scaleFactor, int mau, int d, int hitboxDurian = 6)
         {
             isHit = true;
             PositionX = startX;
@@ -129,7 +128,7 @@ namespace StreetFighterGame.GameEngine
             hitTimer = new Timer { Interval = hitDuration };
             hitTimer.Tick += OnHitTimerTick;
 
-            dashTimer = new Timer { Interval = 10 };
+            dashTimer = new Timer { Interval = 6 };
             dashTimer.Tick += OnDashTick;
 
             SetChiSoSucManh(mau, d);
@@ -162,9 +161,9 @@ namespace StreetFighterGame.GameEngine
 
             if (dashDistance <= 0)
             {
-                
-                dashSpeed = 60;
-                dashDistance = 300; 
+
+                dashSpeed = 100;
+                dashDistance = 300;
                 dashTimer.Stop();
                 if (!IsOnGround()) ChangeState(ActionState.Jumping);
                 else ChangeState(ActionState.Standing);
@@ -182,10 +181,10 @@ namespace StreetFighterGame.GameEngine
         }
         public void startDrawHitbox()
         {
-            
+
             CurrentHitboxImage = HitboxAnimations[ActionState.AttackingI][0];
             lastFrameOfHitboxAnimation = HitboxAnimations[ActionState.AttackingI].Count - 1; // lấy frame để kiểm tra tấn công
-            
+
             //HitboxFrameTimer.Start();
         }
         private void OnHitTimerTick(object sender, EventArgs e)
@@ -280,27 +279,13 @@ namespace StreetFighterGame.GameEngine
             }
 
             // Đặt khoảng thời gian giữa các frame dựa trên hành động
-            frameInterval = GetFrameIntervalForState(newState);
+            frameInterval = 6;
             frameTimer.Interval = frameInterval; // Cập nhật tốc độ Timer
 
             /// neu state la tan cong
             if (IsAttackAction(newState))
             {
                 lastFrameOfAttackAnimation = Animations[newState].Count - 1; // lấy frame để kiểm tra tấn công
-            }
-        }
-        private int GetFrameIntervalForState(ActionState state)
-        {
-            switch (state)
-            {
-                case ActionState.Standing: return 50;
-                case ActionState.WalkingBack: return 50;
-                case ActionState.WalkingFront: return 50;
-                case ActionState.Jumping: return 50;
-                case ActionState.AttackingJ: return 50;
-                case ActionState.AttackingK: return 50;
-                case ActionState.AttackingI: return 50;
-                default: return 32;
             }
         }
         public bool IsAttackAction(ActionState ac)
@@ -338,13 +323,13 @@ namespace StreetFighterGame.GameEngine
             //PositionX = Math.Min(PositionX + 12, 1000);  // Kiểm tra vị trí để tránh đi ra ngoài
             /*** code sữa ****/
             if (IsOnGround()) ChangeState(ActionState.WalkingFront);
-            PositionX = Math.Min(PositionX + 20, 900);  // Kiểm tra vị trí để tránh đi ra ngoài
+            PositionX = Math.Min(PositionX + 30, 900);  // Kiểm tra vị trí để tránh đi ra ngoài
         }
         public void MoveLeft()
         {
             if (isDefense) return;
             if (IsOnGround()) ChangeState(ActionState.WalkingBack);
-            PositionX = Math.Max(PositionX - 20, 0);  // Kiểm tra vị trí để tránh đi ra ngoài
+            PositionX = Math.Max(PositionX - 30, 0);  // Kiểm tra vị trí để tránh đi ra ngoài
         }
         public void StopMoving()
         {
@@ -380,7 +365,7 @@ namespace StreetFighterGame.GameEngine
                 isDefense = false;
             }
         }
-        
+
         protected void LoadAvatar(string avatarPath)
         {
             string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, avatarPath);
@@ -417,10 +402,10 @@ namespace StreetFighterGame.GameEngine
         }
         public void TruMau(float dame)
         {
-           /* Console.WriteLine(dame);
-            Console.WriteLine(cssm.mauHienTai);
-            Console.WriteLine(cssm.mauToiDa);
-            Console.WriteLine(cssm.mauHienTai / cssm.mauToiDa);*/
+            /* Console.WriteLine(dame);
+             Console.WriteLine(cssm.mauHienTai);
+             Console.WriteLine(cssm.mauToiDa);
+             Console.WriteLine(cssm.mauHienTai / cssm.mauToiDa);*/
             cssm.mauHienTai -= dame;
         }
         public void HoiMana(float mana)
