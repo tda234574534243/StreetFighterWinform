@@ -1,5 +1,3 @@
-# README.md
-
 ## Tổng Quan
 ---
 
