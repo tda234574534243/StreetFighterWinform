@@ -299,7 +299,6 @@ namespace StreetFighterGame.GameEngine
                 case ActionState.Jumping: return 50;
                 case ActionState.AttackingJ: return 50;
                 case ActionState.AttackingK: return 50;
-                case ActionState.Dash: return 50;
                 case ActionState.AttackingI: return 50;
                 default: return 32;
             }

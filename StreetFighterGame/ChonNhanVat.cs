@@ -123,7 +123,6 @@ namespace StreetFighterGame
                     buttonFight.Text = "Start"; // Đổi chữ của button khi đã chọn đủ 2 nhân vật
                     panel1.Visible = false;
                     labelName.Visible = false;
-
                     pictureBoxMap.Visible = true;
                     buttonNextMap.Visible = buttonPreMap.Visible = true;
                     ShowCurrentInDexMapOnPictureBox();
@@ -201,6 +200,7 @@ namespace StreetFighterGame
             {
                 pictureBoxChar1.Visible = true;
                 tenNhanVatDuocChon1 = nameNV;
+                currentFrameChar1 = 0;
                 idChar1 = QuanLiTaiKhoan.GetNhanVatIdByName(nameNV);
                 pictureBoxChar1.BackgroundImage = characterImages[nameNV.ToLower()];
                 pictureBoxChar2.Visible = false;
@@ -209,6 +209,7 @@ namespace StreetFighterGame
             {
                 pictureBoxChar2.Visible = true;
                 tenNhanVatDuocChon2 = nameNV;
+                currentFrameChar2 = 0;
                 idChar2 = QuanLiTaiKhoan.GetNhanVatIdByName(nameNV);
                 pictureBoxChar2.BackgroundImage = characterImages[nameNV.ToLower()];
             }

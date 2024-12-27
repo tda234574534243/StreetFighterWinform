@@ -53,7 +53,6 @@ namespace StreetFighterGame
                 if (countdownValue == 0)
                 {   
                    CountdownTimer.Stop();
-                   EndGame();
                    QuanLiTaiKhoan.LuuTranDau(
                         idChar1,
                         idChar2,
@@ -587,7 +586,7 @@ namespace StreetFighterGame
             // Tạo Timer mới
             timer = new Timer
             {
-                Interval = 4000
+                Interval = 1000
             };
             timer.Tick += Timer_Tick;
             timer.Start();
@@ -595,12 +594,22 @@ namespace StreetFighterGame
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            timer.Stop();
-            timer.Dispose();
-            timer = null;
-            FormStart mhs = new FormStart();
-            mhs.Show();
-            this.Dispose(); // Giải phóng form hiện tại
+            if (endGame)
+            {
+                timer.Stop();
+                timer.Dispose();
+                timer = null;
+
+                FormStart mhs = new FormStart();
+                mhs.Show();
+                this.Close();
+            }
+            else
+            {
+                timer.Stop();
+                timer.Dispose();
+                timer = null;
+            }
         }
 
 
