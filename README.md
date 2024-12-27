@@ -137,8 +137,8 @@ Game cung cấp các chức năng sau:
 - Nếu như nguồn hình ảnh, assets nhân vật không đúng tác giả, hoặc thiếu vui lòng phản hồi tại email: projectmap1234@gmail.com
 - If the image sources or character assets are not from the correct author or missing, please respond to the email: projectmap1234@gmail.com.
 # Teammate
-- Manwithgame [https://github.com/tda234574534243]: Animation, tìm map, tìm asset, fix code, tối ưu hóa hiệu suất game, tạo và duy trì môi trường phát triển, phát triển chiến lược quảng bá dự án.
-- Binh05 [https://github.com/Binh05]: Logic, vật lý, fix lỗi, phát triển các tính năng game, kiểm thử game và xử lý các lỗi liên quan đến gameplay, quản lý và giám sát tiến độ công việc nhóm, debug code.
-- PhanTanHuy [https://github.com/PhanTanHuy]: Database, UI, xây dựng hệ thống lưu trữ dữ liệu, thiết kế và tối ưu giao diện người dùng, quản lý và duy trì dữ liệu.
-- LamQuocViet [https://github.com/Lamquocviet]: Thuyết trình, làm slide thuyết trình, chuẩn bị tài liệu hướng dẫn người dùng, hỗ trợ thiết kế.
-- HoDangKhoa [https://github.com/khoahocd]: Viết báo cáo, làm slide thuyết trình, xử lý tài liệu dự án, quản lý, tham khảo nguồn tài liệu asset nhân vật khác nhau.
+- **Manwithgame** [https://github.com/tda234574534243]: Animation, tìm map, tìm asset, fix code, tối ưu hóa hiệu suất game, tạo và duy trì môi trường phát triển, phát triển chiến lược quảng bá dự án.
+- **Binh05** [https://github.com/Binh05]: Logic, vật lý, fix lỗi, phát triển các tính năng game, kiểm thử game và xử lý các lỗi liên quan đến gameplay, quản lý và giám sát tiến độ công việc nhóm, debug code.
+- **PhanTanHuy** [https://github.com/PhanTanHuy]: Database, UI, xây dựng hệ thống lưu trữ dữ liệu, thiết kế và tối ưu giao diện người dùng, quản lý và duy trì dữ liệu.
+- **LamQuocViet** [https://github.com/Lamquocviet]: Thuyết trình, làm slide thuyết trình, chuẩn bị tài liệu hướng dẫn người dùng, hỗ trợ thiết kế.
+- **HoDangKhoa** [https://github.com/khoahocd]: Viết báo cáo, làm slide thuyết trình, xử lý tài liệu dự án, quản lý, tham khảo nguồn tài liệu asset nhân vật khác nhau.
