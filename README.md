@@ -127,7 +127,15 @@ Game cung cấp các chức năng sau:
 - Distribute the modified or original code, provided that the license and copyright notice are included.
 # Disclaimer:
 - The project is provided "as is" without any warranty, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
-# Source character and image: we will update soon
+# Source assets character and images: 
+Vegito: by Fresh Prince 24 [https://www.youtube.com/@FreshPrince24_MUGEN]
+Zenitsu: by Zenitsu by- Dr.Animation:[https://www.youtube.com/@dranimationdrcreanimationimaginationcreations]  
+                      - Sebatião:[https://www.youtube.com/@sebastiaovideosejogos8085]  
+                      - Entah 99:[https://www.youtube.com/@entah9963]
+GokuMUI: by InSeph [https://www.youtube.com/@InSeph]
+Chunli: by InSeph [https://www.youtube.com/@InSeph]
+Ryu: by Planeptune Arte [https://www.youtube.com/@NepgearArte64]
+Gojo: by ArthurMugen [https://www.youtube.com/@arthurmugen]
 # Teammate
 - Manwithgame [https://github.com/tda234574534243]
 - Binh05 [https://github.com/Binh05]
