@@ -128,12 +128,12 @@ Game cung cấp các chức năng sau:
 # Disclaimer:
 - The project is provided "as is" without any warranty, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
 # Source assets character and images: 
-- Vegito: by Fresh Prince 24 [https://www.youtube.com/@FreshPrince24_MUGEN]
-- Zenitsu: by Zenitsu by Dr.Animation:[https://www.youtube.com/@dranimationdrcreanimationimaginationcreations] ; Sebatião:[https://www.youtube.com/@sebastiaovideosejogos8085] ; Entah 99:[https://www.youtube.com/@entah9963]
-- GokuMUI: by InSeph [https://www.youtube.com/@InSeph]
-- Chunli: by InSeph [https://www.youtube.com/@InSeph]
-- Ryu: by Planeptune Arte [https://www.youtube.com/@NepgearArte64]
-- Gojo: by ArthurMugen [https://www.youtube.com/@arthurmugen]
+- **Vegito**: by <span style="color:#FF5733">Fresh Prince 24</span> [https://www.youtube.com/@FreshPrince24_MUGEN]
+- **Zenitsu**: by <span style="color:#FF5733">Dr. Animation</span> [https://www.youtube.com/@dranimationdrcreanimationimaginationcreations]; <span style="color:#FF5733">Sebatião</span> [https://www.youtube.com/@sebastiaovideosejogos8085]; <span style="color:#FF5733">Entah 99</span> [https://www.youtube.com/@entah9963]
+- **GokuMUI**: by <span style="color:#FF5733">InSeph</span> [https://www.youtube.com/@InSeph]
+- **Chunli**: by <span style="color:#FF5733">InSeph</span> [https://www.youtube.com/@InSeph]
+- **Ryu**: by <span style="color:#FF5733">Planeptune Arte</span> [https://www.youtube.com/@NepgearArte64]
+- **Gojo**: by <span style="color:#FF5733">ArthurMugen</span> [https://www.youtube.com/@arthurmugen]
 - Nếu như nguồn hình ảnh, assets nhân vật không đúng tác giả, hoặc thiếu vui lòng phản hồi tại email: projectmap1234@gmail.com
 - If the image sources or character assets are not from the correct author or missing, please respond to the email: projectmap1234@gmail.com.
 # Teammate
